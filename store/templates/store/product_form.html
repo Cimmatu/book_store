@@ -1,0 +1,9 @@
+{% extends 'store/store.html' %}
+{% load static %}
+{% block content %}
+    <form action="" method="POST">
+    {% csrf_token %}
+    {{ form }}
+        <input  type="submit" name="Submit">
+    </form>
+{% endblock %}
