@@ -106,9 +106,10 @@ def processOrder(request):
 
 
 def create_product_view(request):
+
 	form = ProductForm()
 	if request.method == 'POST':
-		form = ProductForm(request.POST)
+		form = ProductForm(request.POST, request.FILES)
 		if form.is_valid():
 			form.save()
 			return redirect('store')
@@ -121,7 +122,7 @@ def edit_product_view(request, pk):
 	product = Product.objects.get(id=pk)
 	form = ProductForm(instance=product)
 	if request.method == 'POST':
-		form = ProductForm(request.POST, instance=product)
+		form = ProductForm(request.POST, request.FILES, instance=product)
 		if form.is_valid():
 			form.save()
 			return redirect('store')

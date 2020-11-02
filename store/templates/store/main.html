@@ -60,11 +60,6 @@
 	
 	</script>
 
-    <style>
-        .margin{
-            margin-right: 5px;
-        }
-    </style>
 
 </head>
 <body>
@@ -78,15 +73,8 @@
 	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	    <ul class="navbar-nav mr-auto">
 
-
 	    </ul>
-	    <div class="form-inline my-2 my-lg-0">
-            {% if request.user.is_authenticated and request.user.is_staff %}
-
-                <a href="{% url 'create_product' %}" class="btn btn-primary margin">Create book</a>
-
-            {% endif %}
-
+	    <div class="form-inline my-2 my-lg-0 ">
             {% if request.user.is_authenticated %}
 	     	    <a href="{% url 'logout' %}" class="btn btn-warning">Logout</a>
             {% else %}
@@ -96,7 +84,6 @@
 	    		<img  id="cart-icon" src="{% static 'images/cart.png' %}">
 	    	</a>
 	    	<p id="cart-total">{{cartItems}}</p>
-
 
 	    </div>
 	  </div>
@@ -108,7 +95,7 @@
 
 
             {% endblock content %}
-         </div>
+     </div>
 
 
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

@@ -17,9 +17,10 @@ class CreateUserForm(UserCreationForm):
 
 
 class ProductForm(ModelForm):
-    name = forms.CharField(max_length=40, min_length=1)
-    price = forms.FloatField()
-    digital = forms.BooleanField()
+    #name = forms.CharField(max_length=40, min_length=1)
+    #rice = forms.FloatField()
+    #digital = forms.BooleanField()
+    #image = forms.ImageField()
     class Meta:
         model = Product
-        fields = ['name', 'price', 'digital']
+        fields = '__all__'
